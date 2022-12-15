@@ -1,0 +1,33 @@
+<!-- <h1>Movies List</h1> -->
+
+
+<div class="movies-list">
+    <div *ngFor="let x of movies">
+
+        <div class="card" style="width: 20rem;">
+            <img src={{x.image}} height="250" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{x.moviename}}</h5>
+                <h6>Hero:{{x.hero}}</h6>
+                <h6>Heroine:{{x.heroine}}</h6>
+
+                <button class="btn btn-success" id="aa" (click)="showreviews(x.moviename)">show Reviews</button>
+                <div id="aa" *ngIf="check(x.moviename)">
+                    The reviews are:
+                    <table *ngFor="let y of reviews">
+                        <tr>{{y.review}}</tr>
+                    </table>
+                </div>
+
+
+            </div>
+            <div class="card-footer">
+                <input class="form-control" type="text" name="reviewmsg" placeholder="write review"
+                    [(ngModel)]="remsg"><br>
+                <button class="btn btn-primary" (click)="addreview(x.moviename)">Add Review</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

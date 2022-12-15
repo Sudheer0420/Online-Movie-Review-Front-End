@@ -1,0 +1,110 @@
+<!-- <div class="bg-image" style="
+  background-image: url('https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80');
+  height: 100vh;" -->
+<!-- <app-showmovies></app-showmovies> -->
+<div>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <br><br>
+    <div class="container-fluid">
+      <b class="navbar-brand" href="#"><span style="color:orange">O</span>nline<span style="color: blue">M</span>ovie<span
+          style="color: green">R</span>eveiws</b>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+        <ul class='navbar-nav'>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signup">Signup</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container " *ngIf="!movies?.length">
+    <h2><span style="color: orange">W</span>elcome To Online Movie Reviews</h2>
+    <h3> No Movies Available </h3>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  </div>
+
+
+  <div class="container movies-list__wrapper" *ngIf="movies?.length">
+    <div class="logo">
+    <h1>Movies List</h1>
+    </div>
+    <table class="table table-striped">
+      <thead>
+
+        <tr>
+          <th>Movie Name</th>
+          <th>Hero Name</th>
+          <th>Heroine name</th>
+          <th>Movie Poster</th>
+          
+          <tr><tr>
+        </tr>
+      </thead>
+
+
+      <tbody>
+
+        <tr *ngFor="let x of movies">
+          <td>{{ x.moviename }}</td>
+          <td>{{ x.hero }}</td>
+          <td>{{ x.heroine }}</td>
+          
+
+
+          <td><img width="100" height="100" src="{{ x.image }}" /></td>
+          <td>
+
+            <a class="btn btn-success" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+              
+              Add Review :)
+              
+            </a>
+
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+
+  
+    <!-- <table width="80%">
+
+      <tr *ngFor="let x of movies">
+        <td>{{ x.moviename }}</td>
+        <td>{{ x.hero }}</td>
+        <td>{{ x.heroine }}</td>
+
+        <td><img width="55" src="{{ x.image }}" /></td>
+        <td>
+          <div style="text-align: center">
+            <a
+              routerLink="/login"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+            >
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="margin-top: 2%"
+              >
+                <b>Add Review :)</b>
+              </button>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table> -->

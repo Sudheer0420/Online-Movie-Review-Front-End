@@ -1,0 +1,63 @@
+<div class="login__wrapper">
+  <nav class="navbar navbar-light" style="background-color: #031522">
+    <a class="navbar-brand" style="margin: 0px 1200px 0px 30px" class="btn btn-primary"
+      routerLink="/home">OnlineMovieReview</a>
+    <div class="navbar navbar-light" style="background-color: #e3f2fd" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/signup" style="margin: 1px 1px px 30px"><span class="sr-only"></span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="vh-50">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUKg9DnY-v14fBUwPP0LW2U8cNfZwqD2tRwA&usqp=CAU" />
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <br /><br><br>
+
+            <br /><br><br><br>
+            <div class="form-group">
+              <label for="username">USERNAME </label><br />
+              <input type="text" placeholder="Enter Your Username" class="form-control" formControlName="username"
+                id="username" name="username" ngModel />
+              <span class="text-danger" *ngIf="
+                  loginForm.get('username').touched &&
+                  loginForm.get('username').invalid
+                ">
+                Username is required
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="password">PASSWORD </label><br />
+              <input type="password" class="form-control" placeholder="Enter Your Password" formControlName="password"
+                id="password" name="password" ngModel />
+              <span class="text-danger" *ngIf="
+                  loginForm.get('password').touched &&
+                  loginForm.get('password').invalid
+                ">
+                Password is required
+              </span>
+            </div>
+            <p><br>
+              <button class="btn btn-primary" style="margin: 0px 50px" type="submit">
+                LOGIN
+              </button>
+            </p>
+            <p>
+              <a routerLink="/signup">New User? Click here to Register</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<head>

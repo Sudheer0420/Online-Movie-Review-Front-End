@@ -1,0 +1,33 @@
+div{
+    background-color: #FAFD86;
+}
+button{
+    border: none;
+    background: linear-gradient(45);
+    padding:1rem;
+    border-radius: 100px;
+    position: relative; right: -60px;
+    size: 100000;
+    
+}
+img{
+    opacity: 0.7;
+}
+img{
+    position: relative;top: 100px;
+}
+h3{
+    position: relative; left: -300px;
+}
+label{
+    position: relative;top: 100px
+}
+input{
+    position: relative; top: 100px;
+}
+button{
+    position: relative; top: 100px;
+}
+a{
+    position: relative; top: 100px;
+}

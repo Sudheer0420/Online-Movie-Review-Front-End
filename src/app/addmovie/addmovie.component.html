@@ -1,0 +1,86 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <b class="navbar-brand" style="margin:0px 1200px 0px 0px;" routerLink="/adminDashboard">MovieReviews</b>
+  <div class="navbar navbar-light" style="background-color: #e3f2fd;" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a class="nav-link" routerLink="/login">Movies <span class="sr-only">(current)</span></a> -->
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br />
+<section class="vh-50">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+          alt="Sample image"> -->
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+          <br />
+          <h3>Add New Movie</h3>
+          <br />
+
+          <div class="form-group">
+            <label for="username">Movie Name </label><br />
+            <input type="text" class="form-control" formControlName="moviename" placeholder="Enter Movie Name"
+              id="username" name="username" />
+            <span class="text-danger" *ngIf="
+                  signupForm.get('moviename').touched &&
+                  signupForm.get('moviename').invalid
+                ">
+                MovieName is required
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Hero Name</label><br />
+            <input type="text" class="form-control" formControlName="hero" placeholder="Enter Hero name" id="email"
+              name="email" />
+            <span class="text-danger" *ngIf="
+                  signupForm.get('hero').touched &&
+                  signupForm.get('hero').invalid
+                ">
+               Hero name is required
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="password">Heroine name </label><br />
+            <input type="text" class="form-control" formControlName="heroine" id="password"
+              placeholder="Enter heroine name" name="password" />
+            <span class="text-danger" *ngIf="
+                  signupForm.get('heroine').touched &&
+                  signupForm.get('heroine').invalid
+                ">
+              Heroine name is required
+            </span>
+            </div>
+            <div class="form-group">
+              <label for="password">Movie image </label><br />
+              <input type="file" class="form-control"  id="image" formControlName="image"
+                placeholder="upload image" name="image" (change)="onFileUpload($event)"/>
+              <span class="text-danger" *ngIf="
+                    signupForm.get('image').touched &&
+                    signupForm.get('image').invalid
+                  ">
+                Movie Image is required
+              </span>
+          </div>
+          <p>
+            <br>
+            <button class="btn btn-primary" type="submit">Add Movie</button>
+          </p>
+          <p>
+            <a routerLink="/admindash">Redirect to dashboard...</a><br />
+          </p>
+        </form>
+      </div>
+    </div>
+    <br />
+  </div>
+  <br />
+
+
+
